@@ -26,8 +26,11 @@ document.querySelector('.check').addEventListener('click', function(){
     }
     else if(guess === secNum && score !== 0 && valid){
         document.querySelector('.message').textContent = '😎 You guessed it right !!!';
-        highScore = document.querySelector('.score').textContent;
-        if (highScore < score) document.querySelector('.highscore').textContent = score;
+        score = document.querySelector('.score').textContent;
+        if (highScore < score) {
+            highScore = score;
+            document.querySelector('.highscore').textContent = highScore;
+        }
         document.querySelector('body').style.backgroundColor = '#60b347';
         document.querySelector('.number').textContent = guess;
         document.querySelector('.number').style.width = '30rem' 
