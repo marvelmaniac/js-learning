@@ -27,7 +27,7 @@ document.querySelector('.check').addEventListener('click', function(){
     else if(guess === secNum && score !== 0 && valid){
         document.querySelector('.message').textContent = '😎 You guessed it right !!!';
         highScore = document.querySelector('.score').textContent;
-        document.querySelector('.highscore').textContent = highScore;
+        if (highScore > score) document.querySelector('.highscore').textContent = highScore;
         document.querySelector('body').style.backgroundColor = '#60b347';
         document.querySelector('.number').textContent = guess;
         document.querySelector('.number').style.width = '30rem' 
