@@ -7,6 +7,7 @@ let highScore = 0;
 document.querySelector('.again').addEventListener('click' , function (){
     secNum = Math.trunc(Math.random()*20 + 1);
     score = 20;
+    highScore = Number(document.querySelector('.highscore').textContent)
     document.querySelector('.message').textContent = 'Start guessing...'
     document.querySelector('.score').textContent = 20;
     document.querySelector('body').style.backgroundColor = '#222';
@@ -26,9 +27,8 @@ document.querySelector('.check').addEventListener('click', function(){
     }
     else if(guess === secNum && score !== 0 && valid){
         document.querySelector('.message').textContent = '😎 You guessed it right !!!';
-        score = document.querySelector('.score').textContent;
-        if (highScore < score) {
-            highScore = score;
+        if (highScore < Number(document.querySelector('.score').textContent)){
+            highScore = document.querySelector('.score').textContent;
             document.querySelector('.highscore').textContent = highScore;
         }
         document.querySelector('body').style.backgroundColor = '#60b347';
